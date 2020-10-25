@@ -11,6 +11,7 @@ if ! zgen saved; then
   zgen oh-my-zsh
 
   OMZ_PLUGINS=(
+    pipenv
   )
   for omz_plugin in $OMZ_PLUGINS; do
     zgen oh-my-zsh plugins/$omz_plugin
@@ -33,6 +34,7 @@ if ! zgen saved; then
   zgen save
 fi
 
-export PATH="$PATH"
+alias ls="lsd"
 
+fpath+=~/.zfunc
 autoload -Uz compinit && compinit -i
